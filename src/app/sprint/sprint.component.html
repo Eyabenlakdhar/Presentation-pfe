@@ -1,0 +1,193 @@
+<body>
+ 
+  
+    <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+  
+    <div #sidebar id="sidebar" class="sidebar">
+      <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+      <ul>
+        <br><br>
+        <li><a  routerLink="/candidat">Introduction</a></li>
+        <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+        <li><a routerLink="/candidature">Problèmatique</a></li>
+        <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+        <li><a routerLink="/objectif">Objectives</a></li>
+        <li><a routerLink="/creationMission">Solution proposée</a></li>
+        <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+        <li><a routerLink="/cv">Architecture</a></li>
+        <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+        <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+        <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+        <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+        <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+      </ul>
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row">
+        
+  
+  
+        <div class="introduction-card" (click)="togglePopup()">
+          <h1>Les sprints</h1>
+          <div class="circle">
+            <span>08</span>
+          </div>
+        </div>
+        
+        <div class="sprints-timeline">
+          <!-- Sprint 1 -->
+          <div class="sprint-item" id="sprint1">
+            <div class="sprint-marker"></div>
+            <div class="sprint-card">
+              <div class="sprint-header">
+                <div class="sprint-number">Sprint 1</div>
+                <div class="sprint-duration">2 semaines</div>
+              </div>
+              <div class="sprint-content">
+                <h3 class="sprint-title">Authentification et gestion des utilisateurs</h3>
+                <p class="sprint-description">Mise en place du système d'authentification et des fonctionnalités de gestion des utilisateurs.</p>
+                <div class="sprint-tasks">
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Création des interfaces d'inscription et de connexion</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Gestion des rôles et des permissions</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Profils utilisateurs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Sprint 2 -->
+          <div class="sprint-item" id="sprint2">
+            <div class="sprint-marker"></div>
+            <div class="sprint-card">
+              <div class="sprint-header">
+                <div class="sprint-number">Sprint 2</div>
+                <div class="sprint-duration">2 semaines</div>
+              </div>
+              <div class="sprint-content">
+                <h3 class="sprint-title">Gestion des missions</h3>
+                <p class="sprint-description">Développement des fonctionnalités liées à la gestion des missions.</p>
+                <div class="sprint-tasks">
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Création et modification des missions</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Affectation des missions aux ingénieurs</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Suivi de l'état des missions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Sprint 3 -->
+          <div class="sprint-item" id="sprint3">
+            <div class="sprint-marker"></div>
+            <div class="sprint-card">
+              <div class="sprint-header">
+                <div class="sprint-number">Sprint 3</div>
+                <div class="sprint-duration">2 semaines</div>
+              </div>
+              <div class="sprint-content">
+                <h3 class="sprint-title">Gestion des CVs</h3>
+                <p class="sprint-description">Implémentation du système de gestion des CVs et des compétences.</p>
+                <div class="sprint-tasks">
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Upload et stockage des CVs</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Extraction et analyse des compétences</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Recherche et filtrage des CVs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Sprint 4 -->
+          <div class="sprint-item" id="sprint4">
+            <div class="sprint-marker"></div>
+            <div class="sprint-card">
+              <div class="sprint-header">
+                <div class="sprint-number">Sprint 4</div>
+                <div class="sprint-duration">2 semaines</div>
+              </div>
+              <div class="sprint-content">
+                <h3 class="sprint-title">Gestion des réclamations</h3>
+                <p class="sprint-description">Développement du système de gestion des réclamations et du support.</p>
+                <div class="sprint-tasks">
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Création et soumission des réclamations</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Traitement et suivi des réclamations</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Notifications et alertes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Sprint 5 -->
+          <div class="sprint-item" id="sprint5">
+            <div class="sprint-marker"></div>
+            <div class="sprint-card">
+              <div class="sprint-header">
+                <div class="sprint-number">Sprint 5</div>
+                <div class="sprint-duration">2 semaines</div>
+              </div>
+              <div class="sprint-content">
+                <h3 class="sprint-title">Déploiement</h3>
+                <p class="sprint-description">Finalisation et déploiement de l'application en production.</p>
+                <div class="sprint-tasks">
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Tests finaux et correction des bugs</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Configuration de l'environnement de production</span>
+                  </div>
+                  <div class="task-item">
+                    <span class="task-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="task-text">Mise en ligne et documentation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <a href="page1.html" class="arrow-left" routerLink="/dashboard_ing_archives"><i class="fas fa-arrow-left"></i> </a>
+          <span class="page-number">Page 11</span>
+          <a href="page3.html" class="arrow-right" routerLink="/cv"> <i class="fas fa-arrow-right"></i></a>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  

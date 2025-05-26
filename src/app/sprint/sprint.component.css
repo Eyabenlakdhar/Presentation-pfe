@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Conserver les styles originaux pour le body, sidebar, footer et introduction-card */
+/* Nouvel arrière-plan unique */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Effet de vagues en arrière-plan */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(153, 105, 22, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(153, 105, 22, 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23996916' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* Effet de particules dorées flottantes */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.1) 0%, transparent 15%),
+    radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 20%),
+    radial-gradient(circle at 50% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 70% 20%, rgba(212, 175, 55, 0.09) 0%, transparent 18%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.07) 0%, transparent 22%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Style du bouton */
+#openSidebar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #775b18;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+#openSidebar:hover {
+  background: #34495e;
+}
+
+/* Style du sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #775b18;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Style global pour le footer */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: auto;
+  max-width: 300px;
+}
+
+/* Lien de la flèche gauche */
+.page-footer .arrow-left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-left:hover {
+  color: #f39c12;
+  transform: translateX(-5px);
+}
+
+/* Lien de la flèche droite */
+.page-footer .arrow-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-right:hover {
+  color: #f39c12;
+  transform: translateX(5px);
+}
+
+/* Style du numéro de la page */
+.page-footer .page-number {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Introduction card - CONSERVÉE TELLE QUELLE */
+.introduction-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-radius: 40px;
+  padding: 20px 30px;
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.introduction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.introduction-card h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  color: #996916;
+}
+
+.circle {
+  background: #996916;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* NOUVEAU DESIGN POUR LES SPRINTS */
+/* Amélioration de la timeline des sprints pour s'adapter au nouvel arrière-plan */
+.sprints-timeline {
+  max-width: 1200px;
+  margin: 50px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sprints-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #996916, #d4af37);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(153, 105, 22, 0.3);
+}
+
+.sprint-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sprint-card {
+  width: 80%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(153, 105, 22, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.sprint-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(153, 105, 22, 0.2);
+}
+
+.sprint-header {
+  background: linear-gradient(135deg, #996916, #d4af37);
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.sprint-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 70%);
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.sprint-number {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sprint-duration {
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.sprint-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sprint-title {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sprint-description {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sprint-tasks {
+  margin-top: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(153, 105, 22, 0.1);
+}
+
+.task-icon {
+  color: #996916;
+  font-size: 1.2rem;
+}
+
+.task-text {
+  color: #555;
+}
+
+.sprint-marker {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: #996916;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 5px rgba(153, 105, 22, 0.2), 0 0 15px rgba(153, 105, 22, 0.4);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .sprints-timeline::before {
+    left: 30px;
+  }
+  
+  .sprint-item {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
+  
+  .sprint-marker {
+    left: 30px;
+  }
+  
+  .sprint-card {
+    width: 100%;
+  }
+}

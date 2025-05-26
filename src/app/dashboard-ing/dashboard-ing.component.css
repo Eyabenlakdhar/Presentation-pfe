@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Style global de la page */
+body {
+  background: linear-gradient(135deg, #f5e5d3, #e6d2b5);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Effet de motif subtil en arrière-plan */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='%23996916' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bouton pour ouvrir la sidebar */
+#openSidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #996916, #b18434);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+#openSidebar:hover {
+  background: linear-gradient(135deg, #b18434, #d4af37);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Sidebar (menu latéral) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(135deg, #94691f, #b18434);
+  color: white;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(231, 76, 60, 0.9);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+  background: #e74c3c;
+  transform: rotate(90deg);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+/* Style global pour le footer */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  backdrop-filter: blur(5px);
+}
+
+/* Lien de la flèche gauche */
+.page-footer .arrow-left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-left:hover {
+  color: #f39c12;
+  transform: translateX(-5px);
+}
+
+/* Lien de la flèche droite */
+.page-footer .arrow-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-right:hover {
+  color: #f39c12;
+  transform: translateX(5px);
+}
+
+/* Style du numéro de la page */
+.page-footer .page-number {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Introduction card */
+.introduction-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-radius: 30px;
+  padding: 20px 30px;
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.introduction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.introduction-card h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  color: #996916;
+  font-weight: 600;
+}
+
+.circle {
+  background: #996916;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(153, 105, 22, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(153, 105, 22, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(153, 105, 22, 0);
+  }
+}
+
+/* Custom divider */
+.custom-divider {
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, #e4cbaa, #94691f);
+  margin: 30px auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Grille principale des cartes */
+.card-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px auto;
+  gap: 20px;
+  max-width: 1400px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Conteneur des cartes à gauche et à droite */
+.left-cards,
+.right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+
+/* Style des cartes */
+.card {
+  background: linear-gradient(135deg, #b3823d, #e3aa68);
+  color: white;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Effet au survol */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de brillance sur les cartes */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s ease;
+  z-index: -1;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+/* Conteneur de la ligne verticale */
+.card-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInRight 0.8s forwards;
+}
+
+.left-cards .card-container:nth-child(1) { animation-delay: 0.4s; }
+.left-cards .card-container:nth-child(2) { animation-delay: 0.6s; }
+.left-cards .card-container:nth-child(3) { animation-delay: 0.8s; }
+
+.right-cards .card-container:nth-child(1) { animation-delay: 0.5s; }
+.right-cards .card-container:nth-child(2) { animation-delay: 0.7s; }
+
+/* Animation pour les cartes de droite */
+.right-cards .card-container {
+  transform: translateX(30px);
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ligne verticale */
+.vertical-line {
+  width: 4px;
+  height: 60px;
+  background: linear-gradient(to bottom, #94691f, #d4af37);
+  border-radius: 2px;
+  margin: 0 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: shimmerVertical 2s infinite;
+}
+
+@keyframes shimmerVertical {
+  100% {
+    top: 100%;
+  }
+}
+
+/* Image centrée */
+.center-image {
+  text-align: center;
+  flex: 1.2;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 1s forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.center-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  border: 3px solid rgba(153, 105, 22, 0.3);
+}
+
+.center-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(153, 105, 22, 0.6);
+}
+
+/* Style pour le titre des cartes */
+.card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+
+/* Style pour les icônes dans les cartes */
+.card i, .card svg {
+  font-size: 28px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover i, .card:hover svg {
+  transform: scale(1.2);
+}
+
+/* Style pour les groupes d'icônes */
+.card div[style*="display: flex"] {
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Effet spécial pour les icônes */
+.card i:hover, .card svg:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Responsivité */
+@media (max-width: 992px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .left-cards, .right-cards {
+    width: 90%;
+  }
+
+  .center-image {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .introduction-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation pour les icônes */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card i, .card svg {
+  animation: iconPulse 2s infinite;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+/* Effet de profondeur pour les cartes */
+.card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Effet de lumière ambiante */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.2), transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}

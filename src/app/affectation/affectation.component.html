@@ -1,0 +1,53 @@
+<body>
+  <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+  <div #sidebar id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+    <ul>
+      <li><a  routerLink="/candidat">Introduction</a></li>
+      <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+      <li><a routerLink="/candidature">Problèmatique</a></li>
+      <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+      <li><a routerLink="/objectif">Objectives</a></li>
+      <li><a routerLink="/creationMission">Solution proposée</a></li>
+      <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+      <li><a routerLink="/cv">Architecture</a></li>
+      <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+      <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+      <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+      <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+      <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+
+    </ul>
+  </div>
+
+  <div class="mind-map">
+    <div class="center-node">Plan</div>
+    <div class="node left">
+      <div class="sub-node">Introduction</div>
+      <div class="sub-node">Présentation de l'entreprise</div>
+      <div class="sub-node">Problèmatique</div>
+      <div class="sub-node">Etude de l'existant</div>
+      <div class="sub-node">Objectives</div>
+      <div class="sub-node">Solution proposée</div>
+      <div class="sub-node">Méthodologie adapté</div>
+      
+    </div>
+    <div class="node right">
+      <div class="sub-node">Sprints</div>
+      <div class="sub-node">Architecture</div>
+      <div class="sub-node">Analyse et spécification des besoins</div>
+      <div class="sub-node">Environnement du travail</div>
+      <div class="sub-node">Partie Devops</div>
+      <div class="sub-node">Réalisation</div>
+      <div class="sub-node">Conclusion</div>
+    </div>
+  </div>
+  <footer class="page-footer">
+    <a href="page1.html" class="arrow-left" routerLink="/accueil"><i class="fas fa-arrow-left"></i> ↩</a>
+    <span class="page-number">Page 2</span>
+    <a href="page3.html" class="arrow-right" routerLink="/candidat">↪ <i class="fas fa-arrow-right"></i></a>
+  </footer>
+  
+  
+</body>

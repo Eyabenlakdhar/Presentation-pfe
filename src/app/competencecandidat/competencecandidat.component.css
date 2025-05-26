@@ -1,0 +1,418 @@
+/* Style global de la page */
+body {
+  background: linear-gradient(135deg, #dbbf95, #e6e2dd); /* Fond dégradé */
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  
+  min-height: 100vh; /* S'assure que la page occupe toute la hauteur */
+}
+
+/* Bouton pour ouvrir la sidebar */
+#openSidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#openSidebar:hover {
+  background: #34495e;
+}
+
+/* Sidebar (menu latéral) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #94691f;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #1abc9c;
+}
+
+
+/* Style global pour le footer */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espace entre les éléments */
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Lien de la flèche gauche */
+.page-footer .arrow-left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre l'icône et le texte */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-left:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(-5px); /* Décalage vers la gauche */
+}
+
+/* Lien de la flèche droite */
+.page-footer .arrow-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre le texte et l'icône */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-right:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(5px); /* Décalage vers la droite */
+}
+
+/* Style du numéro de la page */
+.page-footer .page-number {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/*introduction card */
+.introduction-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+  color: #333; /* Couleur du texte */
+  border-radius: 40px; /* Coins arrondis */
+  padding: 20px 30px; /* Espacement interne */
+  position: relative;
+  max-width: 600px; /* Limite la largeur */
+  margin: 20px auto; /* Centre horizontalement */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+}
+
+.introduction-card h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem; /* Taille du titre */
+  margin: 0;
+  color: #996916;
+}
+
+.circle {
+  background: #996916; /* Couleur du cercle */
+  color: white; /* Couleur du texte dans le cercle */
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Cercle parfait */
+  margin-left: 20px; /* Espacement entre le texte et le cercle */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre sur le cercle */
+}
+
+/* Conteneur de l'image / image centree */
+.center-image {
+  text-align: center; /* Centre le contenu à l'intérieur */
+}
+
+
+
+/* Image centrée */
+.center-image img {
+  max-width: 80%; /* Ajustez la largeur maximale de l'image */
+  height: auto; /* Garde les proportions de l'image */
+
+}
+
+/*les cartes à droites et à gauche */
+/* Ligne verticale */
+/* Conteneur général des cartes */
+.card-container {
+  display: flex;
+  align-items: center; /* Centre la ligne et la carte verticalement */
+  position: absolute;
+  top: 50%; /* Aligner verticalement */
+  transform: translateY(-50%);
+}
+
+/* Conteneur pour la carte gauche */
+.left-container {
+  left: 10%; /* Position gauche */
+}
+
+/* Conteneur pour la carte droite */
+/* Conteneur pour la carte droite */
+.right-container {
+  right: 10%; /* Position droite */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligner les éléments à droite */
+  gap: 15px; /* Espacement entre la ligne et la carte */
+}
+
+
+/* Carte */
+.card {
+  background: linear-gradient(135deg, #b3823d, #e3aa68); /* Dégradé de fond */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 180px; /* Largeur de la carte */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  gap: 15px; /* Espacement entre la ligne et la carte */
+
+}
+
+/* Ligne verticale à droite */
+/* Ligne verticale commune */
+/* Ligne verticale à droite */
+.vertical-line {
+  width: 2px;
+  height: 50px;
+  background: white; /* Couleur de la ligne */
+  border-radius: 2px;
+  margin-left: 10px; /* Ajoute un espace entre la ligne et la carte */
+}
+
+/* custom divider */
+/* Divider customisé */
+.custom-divider {
+  width: 80%; /* Largeur du divider (ajustez selon vos besoins) */
+  height: 4px; /* Hauteur du divider */
+  background: linear-gradient(to right, #e4cbaa, #94691f); /* Dégradé élégant */
+  margin: 30px auto; /* Centré avec un espacement au-dessus et en-dessous */
+  border-radius: 5px; /* Arrondi pour un look stylé */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet 3D */
+}
+/*popup*/
+/* Popups générales */
+/* Popups générales */
+.popup {
+  position: fixed;
+  top: 0;
+  width: 50%; /* Occupe la moitié de la page */
+  height: 100%; /* Hauteur totale */
+  background: #e2d2bc;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: none; /* Cachée par défaut */
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Popup active */
+.popup.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Popup à gauche */
+.left-popup {
+  left: 0;
+  transform: translateX(-100%); /* Cachée par défaut */
+}
+
+.left-popup.active {
+  transform: translateX(0);
+}
+
+/* Popup à droite */
+.right-popup {
+  right: 0;
+  transform: translateX(100%); /* Cachée par défaut */
+}
+
+.right-popup.active {
+  transform: translateX(0);
+}
+
+/* Bouton pour fermer la popup */
+.popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.popup .close-btn:hover {
+  background: #c0392b; /* Couleur au survol */
+}
+
+/*tableau */
+.custom-table {
+  width: 80%;
+  margin: 30px auto;
+  overflow-x: auto;
+}
+
+.custom-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #b67314;
+  font-family: 'Arial', sans-serif;
+  color: #000000; /* Couleur du texte en noir */
+
+}
+
+.custom-table th {
+  background: linear-gradient(135deg, #e4cbaa, #94691f);
+  color: white;
+  font-weight: bold;
+}
+
+.custom-table tr:nth-child(even) {
+  background: #ffffff;
+}
+
+.custom-table tr:nth-child(odd) {
+  background: #f1e7c8;
+}
+
+.custom-table tr:hover {
+  background: #e1b479;
+}
+/* Titre principal */
+.popup h2 {
+  font-size: 2rem; /* Taille plus grande */
+  color: #7b5c2c; /* Couleur élégante */
+  margin-bottom: 10px; /* Espacement sous le titre */
+  font-family: 'Roboto', sans-serif; /* Police moderne */
+  text-align: center; /* Centré */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Légère ombre */
+}
+
+/* Sous-titres (ex: Principales fonctionnalités, Points forts, Points faibles) */
+.popup h3 {
+  font-size: 1.3rem;
+  color: #94691f; /* Couleur dorée pour les sous-titres */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase; /* Mettre en majuscules */
+  letter-spacing: 0px; /* Espacement des lettres */
+}
+
+/* Texte général */
+.popup p {
+  font-size: 1rem; /* Taille standard */
+  line-height: 1.6; /* Espacement entre les lignes */
+  color: #333; /* Couleur sombre pour un meilleur contraste */
+  margin-bottom: 20px; /* Espacement sous le texte */
+  text-align: justify; /* Alignement justifié */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Listes (Points forts/faibles) */
+.popup ul {
+  margin: 10px 0;
+  padding-left: 20px; /* Espacement des puces */
+  list-style-type: disc; /* Style des puces */
+  color: #555; /* Couleur douce pour les listes */
+  font-family: 'Arial', sans-serif;
+}
+
+.popup ul li {
+  margin-bottom: 7px; /* Espacement entre les éléments */
+  line-height: 1.6; /* Espacement entre les lignes */
+}
+
+.popup ul li strong {
+  color: #000; /* Mise en évidence des mots importants */
+}
+
+/* Image */
+.popup .popup-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #7b5c2c; /* Bordure élégante */
+}

@@ -1,0 +1,60 @@
+<body >
+  <div class="top-center">
+    <br> <br> 
+    <p>Année universitaire 2024/2025</p>
+  </div>
+  
+  <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+  <div #sidebar id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+    <ul>
+      <br><br>
+      <li><a  routerLink="/candidat">Introduction</a></li>
+      <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+      <li><a routerLink="/candidature">Problèmatique</a></li>
+      <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+      <li><a routerLink="/objectif">Objectives</a></li>
+      <li><a routerLink="/creationMission">Solution proposée</a></li>
+      <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+      <li><a routerLink="/cv">Architecture</a></li>
+      <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+      <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+      <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+      <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+      <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+    </ul>
+  </div>
+  <img src="/assets/logofindme.png" alt="Logo Left" class="logo-left">
+  <img src="/assets/logoesprit.png" alt="Logo FindMe" class="logo">
+  <div class="container-fluid">
+    <div class="row">
+      
+
+      <div class="centered-title">
+          <div class="custom-divider"></div>
+    
+          <h1>FindMe – Plateforme de Recrutement Virtuelle</h1>
+          <p class="subtitle">Simplifiez la rencontre entre talents et entreprises</p>
+       
+          <div class="custom-divider"></div>
+     
+      </div>
+      <div class="text-bottom-right">
+        <p><strong>Réalisée par :</strong> Eya Ben Lakdhar</p>
+        <p><strong>Encadrant académique :</strong> Mr .Med Amine Hechmi</p>
+        <p><strong>Encadrant professionnel :</strong> M.Nada Aziz et Mr. Iheb Kechiche</p>
+        <br> <br>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="page-footer" >
+    Page 1
+    <i class="fas fa-arrow-right" routerLink="/affectation"></i>
+
+  </footer>
+  
+  
+</body>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">

@@ -1,0 +1,269 @@
+/* Corps */
+body {
+  background: url("/assets/image.png") no-repeat center center;
+  background-size: cover; /* Assure que l'image couvre tout le fond */
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body::before {
+  content: ''; /* Ajoute une couche supplémentaire */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 243, 240, 0.88); /* Couleur semi-transparente */
+  z-index: 0; /* Place la couche derrière tout le contenu */
+}
+
+  
+  /* Bouton pour ouvrir la barre latérale */
+  #openSidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #996916;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 14;
+  }
+  
+  #openSidebar:hover {
+    background: #775b18;
+    z-index: 14;
+  }
+  
+  /* Barre latérale */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #996916;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 14;
+  }
+  
+  .sidebar.active {
+    left: 0;
+    z-index: 14;
+  }
+  
+  .sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    z-index: 14;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    z-index: 14;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+    z-index: 14;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    z-index: 14;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #ffeb3b;
+    z-index: 14;
+  }
+  
+  /* En-tête */
+  .header-container {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 102;
+    z-index: 14;
+    z-index: 14;
+  }
+  
+  /*introduction card */
+.introduction-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    color: #333; /* Couleur du texte */
+    border-radius: 40px; /* Coins arrondis */
+    padding: 20px 30px; /* Espacement interne */
+    position: relative;
+    max-width: 600px; /* Limite la largeur */
+    margin: 20px auto; /* Centre horizontalement */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+    z-index: 14;
+  }
+  
+  .introduction-card h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem; /* Taille du titre */
+    margin: 0;
+    color: #996916;
+    z-index: 14;
+    z-index: 14;
+  }
+  
+  .circle {
+    background: #996916; /* Couleur du cercle */
+    color: white; /* Couleur du texte dans le cercle */
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Cercle parfait */
+    margin-left: 20px; /* Espacement entre le texte et le cercle */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre sur le cercle */
+    z-index: 14;
+  }
+  
+  /* Conteneur vidéo */
+  .video-container {
+    position: relative;
+    width: 50%; /* La vidéo occupe 80% de la largeur du conteneur */
+    height: 40%; /* Ajuste automatiquement la hauteur */
+    margin: 20px auto; /* Centre le conteneur horizontalement et ajoute un espacement */
+    background: #ebba8e;
+    overflow: hidden;
+    border-radius: 15px; /* Coins arrondis pour un effet visuel agréable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+    z-index: 14;
+}
+
+.realisation-video {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    height: auto; /* Ajuste automatiquement la hauteur */
+    object-fit: contain; /* Respecte les proportions de la vidéo */
+    border: none;
+    z-index: 14;
+}
+  
+  
+/* Style global pour le footer */
+.page-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espace entre les éléments */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 14;
+  
+  }
+  
+  /* Lien de la flèche gauche */
+  .page-footer .arrow-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-left:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(-5px); /* Décalage vers la gauche */
+  }
+  
+  /* Lien de la flèche droite */
+  .page-footer .arrow-right {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre le texte et l'icône */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-right:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(5px); /* Décalage vers la droite */
+  }
+  
+  /* Style du numéro de la page */
+  .page-footer .page-number {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 14;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #996916;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    z-index: 14;
+}
+
+.project-link:hover {
+    color: #775b18;
+    text-decoration: underline;
+}
+
+.qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 14;
+}
+
+.qr-code-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}

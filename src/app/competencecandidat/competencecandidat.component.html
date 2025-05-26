@@ -1,0 +1,199 @@
+<body>
+  <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+  <div #sidebar id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+    <ul>
+      <li><a  routerLink="/candidat">Introduction</a></li>
+      <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+      <li><a routerLink="/candidature">Problèmatique</a></li>
+      <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+      <li><a routerLink="/objectif">Objectives</a></li>
+      <li><a routerLink="/creationMission">Solution proposée</a></li>
+      <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+      <li><a routerLink="/cv">Architecture</a></li>
+      <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+      <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+      <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+      <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+      <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+    </ul>
+  </div>
+  <div class="container-fluid">
+<div class="row">
+  
+  <div class="introduction-card" >
+    <h1>Etude de l'existant</h1>
+    <div class="circle">
+      <span>04</span>
+    </div>
+  </div>
+
+ <div class="center-image">
+    <img src="assets/etudee.png" alt="Image centrée">
+  </div>
+ 
+
+
+
+  <div class="custom-divider"></div>
+  <div class="custom-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Les Fonctionnalités</th>
+          <th>OPTEAMIS</th>
+          <th>Tanit Jobs</th>
+          <th>Find Me</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Gestion des utilisateurs :</span></td>          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Gestion des missions :</span></td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Gestion des CVs :</span></td>     
+           <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Dashboard Admin :</span></td>     
+               <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Gestion des entretiens :</span></td>          <td>✅</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+       
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Gestion des avis :</span></td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+       
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Interface utilisateur :</span></td>
+                    <td>⚠️Simple mais peu moderne</td>
+          <td>⚠️Vieillissante et complexe</td>
+          <td>✅Moderne et intuitive</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Filtres de recherches :</span></td>
+          <td>⚠️Filtres limités</td>
+          <td>⚠️Filtres parfois imprécis</td>
+          <td>✅Recherche avancée avec résultats pertinents</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Fonctionnalités avancées:</span></td>
+          <td>❌</td>
+          <td>⚠️Fonctionnalités défaillantes</td>
+          <td> ✅Importation de CV sous forme pdf , scrapping des données</td>
+        </tr>
+        <tr>
+          <td><span style="color: #94691f; font-weight: bold;">🏷️Outils pour recruteurs:</span></td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅Avancés (affectation directe à des missions)</td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+
+  
+
+</div></div>
+
+
+
+<!-- Carte Introduction -->
+<div class="card-container left-container" (click)="togglePopup('introduction')">
+  <div class="card">
+    <span class="card-title">TANIT JOBS</span>
+  </div>
+  <div class="vertical-line"></div>
+</div>
+
+<!-- Carte Architecture -->
+<div class="card-container right-container" (click)="togglePopup('architecture')">
+  <div class="vertical-line"></div>
+  <div class="card">
+    <span class="card-title">OPTEAMIS</span>
+  </div>
+</div>
+
+<!-- Popup Introduction (à droite) -->
+<div class="popup right-popup" id="popup-introduction" #popupIntroduction>
+  <button class="close-btn" (click)="togglePopup('')">×</button>
+  <div class="popup-content">
+    <h2>TanitJobs</h2>
+    <img src="assets/tanit.png" alt="Tanitjobs Logo" class="popup-image" />
+    <br>
+    <h3>🔝Points forts :</h3>
+    <ul>
+      <li><strong>Navigation intuitive  :</strong> Filtres clairs pour une recherche efficace.</li>
+      <li><strong>Alertes personnalisées :</strong> Notifications pour les nouvelles offres.</li>
+      <li><strong>Adaptation locale :</strong> Conçue pour le marché tunisien, particulièrement dans le domaine IT .</li>
+    </ul> <br> <br>
+    <h3>🔻Points faibles :</h3>
+    <ul>
+      <li><strong>Design obsolète :</strong> Interface peu moderne et complexe pour les nouveaux utilisateurs.</li>
+      <li><strong>Fonctionnalités limitées :</strong> Importation de CV au format PDF peu fiable.</li>
+      <li><strong>Manque d'outils recruteurs :</strong> Absence de fonctionnalité pour l'affectation directe des candidats .</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<!-- Popup Architecture (à gauche) -->
+<!-- Popup Architecture (à gauche) -->
+<div class="popup left-popup" id="popup-architecture" #popupArchitecture>
+  <button class="close-btn" (click)="togglePopup('')">×</button>
+  <div class="popup-content">
+    <h2>OPTEAMIS</h2>
+    <img src="assets/opteamis.png"  class="popup-image" />
+    <br>
+    <h3>🔝 Points forts :</h3>
+    <ul>
+      <li><strong>Automatisation efficace :</strong> Simplifie les processus complexes pour améliorer la productivité .</li>
+      <li><strong>Base de données riche  :</strong> Contient des offres variées, locales et internationales .</li>
+    </ul> <br> <br>
+    <h3>🔻Points faibles :</h3>
+    <ul>
+      <li><strong>Fonctionnalités limités :</strong> Absence d'importation de CV en PDF, scraping de données, et outils pour affecter un candidat à une mission.</li>
+      <li><strong>Accessibilité et design :</strong> Expérience utilisateur nécessitant une modernisation .</li>
+      <li><strong>Recherche imprécise :</strong> Résultats parfois non pertinents dans les filtres .</li>
+      <li><strong>Manque de gestion :</strong> Absence de sections pour réclamations, suggestions et retours utilisateurs. .</li>
+     
+
+
+    </ul>
+  </div>
+</div>
+
+
+  
+  <footer class="page-footer">
+    <a href="page1.html" class="arrow-left" routerLink="/candidature"><i class="fas fa-arrow-left"></i> ↩</a>
+    <span class="page-number">Page 7</span>
+    <a href="page3.html" class="arrow-right" routerLink="/objectif">↪ <i class="fas fa-arrow-right"></i></a>
+  </footer>
+   
+  
+</body>
+
+

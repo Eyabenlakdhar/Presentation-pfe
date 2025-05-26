@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+body {
+  background: url("/assets/image.png") no-repeat center center;
+  background-size: cover; /* Assure que l'image couvre tout le fond */
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: relative;
+ 
+ 
+  min-height: 100vh;
+}
+
+body::before {
+  content: ''; /* Ajoute une couche supplémentaire */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 243, 240, 0.88); /* Couleur semi-transparente */
+  z-index: 0; /* Place la couche derrière tout le contenu */
+}
+
+/* Style du bouton */
+#openSidebar {
+  position: fixed;
+  bottom: 20px; /* Distance depuis le bas */
+  left: 20px;   /* Distance depuis la gauche */
+  background: #775b18;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  z-index: 2; /* Assure que le bouton reste visible */
+}
+
+#openSidebar:hover {
+  background: #34495e;
+}
+
+/* Style du sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #775b18;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 3; /* Assure que le sidebar reste au-dessus de tout */
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #1abc9c;
+}
+
+
+
+/* Style global pour le footer */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espace entre les éléments */
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Lien de la flèche gauche */
+.page-footer .arrow-left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre l'icône et le texte */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-left:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(-5px); /* Décalage vers la gauche */
+}
+
+/* Lien de la flèche droite */
+.page-footer .arrow-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre le texte et l'icône */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-right:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(5px); /* Décalage vers la droite */
+}
+
+/* Style du numéro de la page */
+.page-footer .page-number {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/*introduction card */
+.introduction-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+  color: #333; /* Couleur du texte */
+  border-radius: 40px; /* Coins arrondis */
+  padding: 20px 30px; /* Espacement interne */
+  position: relative;
+  max-width: 600px; /* Limite la largeur */
+  margin: 20px auto; /* Centre horizontalement */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+}
+
+.introduction-card h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem; /* Taille du titre */
+  margin: 0;
+  color: #996916;
+}
+
+.circle {
+  background: #996916; /* Couleur du cercle */
+  color: white; /* Couleur du texte dans le cercle */
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Cercle parfait */
+  margin-left: 20px; /* Espacement entre le texte et le cercle */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre sur le cercle */
+}
+/*image à gauche */
+.left-image {
+  position: absolute;
+  top: 50%; /* Centre verticalement */
+  left: 60px; /* Distance depuis la gauche */
+  transform: translateY(-50%); /* Centrage vertical parfait */
+  z-index: 2; /* Assure que l'image reste au-dessus des autres éléments */
+ 
+}
+
+.left-image img {
+  max-width: 300px; /* Limite la largeur de l'image */
+  height: auto; /* Garde les proportions de l'image */
+
+}
+
+/* pop up */
+/* Conteneur de la popup */
+.popup {
+  position: absolute; /* Position absolue pour un placement précis */
+  top: 50%; /* Ajustez la position verticale */
+  left: 55%; /* Ajustez la position horizontale */
+  transform: translate(-50%, -50%); /* Centre la pop-up */
+  width: 50%; /* Largeur de la pop-up */
+  height: auto; /* Hauteur dynamique */
+  background: #ffffff;
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  padding: 20px;
+  display: none; /* Cachée par défaut */
+}
+
+/* Popup active (visible) */
+.popup.active {
+  display: block; /* Affiche la pop-up */
+}
+
+/* Contenu de la popup */
+.popup-content {
+  margin: 20px;
+}
+
+.popup-content h2 {
+  font-size: 1.8rem;
+  color: #775b18;
+}
+
+.popup-content p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+  font-size: 20px;
+  color: #e74c3c;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+
+
+

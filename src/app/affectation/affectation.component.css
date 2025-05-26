@@ -1,0 +1,237 @@
+/* Style global de la page */
+body {
+  background: linear-gradient(135deg, #7b5c2c, #e4cbaa); /* Fond dégradé */
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* S'assure que la page occupe toute la hauteur */
+}
+
+/* Bouton pour ouvrir la sidebar */
+#openSidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#openSidebar:hover {
+  background: #34495e;
+}
+
+/* Sidebar (menu latéral) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #94691f;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Mind map global */
+.mind-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Cercle central */
+.center-node {
+  background: #94691f;
+  color: white;
+  font-weight: bold;
+  font-size: 3.5rem; /* Taille du texte */
+  text-align: center;
+  line-height: 150px; /* Centre verticalement */
+  width: 200px; /* Diamètre */
+  height: 200px; /* Diamètre */
+  border-radius: 50%; /* Rond parfait */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Ombre renforcée */
+  position: relative;
+  z-index: 1;
+}
+
+/* Sous-nœuds */
+.node {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacement vertical entre les sous-nœuds */
+  position: absolute;
+  top: 0;
+  font-size: 1rem; /* Taille du texte */
+}
+
+.node.left {
+  left: -400px; /* Position gauche */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem; /* Taille du texte */
+}
+
+.node.right {
+  right: -400px; /* Position droite */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem; /* Taille du texte */
+}
+
+.sub-node {
+  background: linear-gradient(135deg, #cba35f, #94691f); /* Dégradé des sous-nœuds */
+  color: white;
+  font-size: 1rem; /* Taille du texte */
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px; /* Centre verticalement */
+  width: 200px; /* Largeur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Ombre renforcée */
+  position: relative;
+}
+
+/* Ligne de connexion entre le centre et les sous-nœuds */
+.sub-node::before {
+  content: '';
+  width: 2px;
+  height: 50px;
+  background: #fffefe; /* Couleur de la ligne */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.node.left .sub-node::before {
+  right: -20px;
+}
+
+.node.right .sub-node::before {
+  left: -20px;
+}
+
+/* Animation d'apparition des sous-nœuds */
+.sub-node {
+  opacity: 0;
+  transform: translateY(30px); /* Décale au départ */
+  animation: fadeIn 0.7s ease forwards; /* Apparition fluide */
+}
+
+.sub-node:nth-child(1) { animation-delay: 0.3s; }
+.sub-node:nth-child(2) { animation-delay: 0.5s; }
+.sub-node:nth-child(3) { animation-delay: 0.7s; }
+.sub-node:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Style global pour le footer */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espace entre les éléments */
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Lien de la flèche gauche */
+.page-footer .arrow-left {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre l'icône et le texte */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-left:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(-5px); /* Décalage vers la gauche */
+}
+
+/* Lien de la flèche droite */
+.page-footer .arrow-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 8px; /* Espace entre le texte et l'icône */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.page-footer .arrow-right:hover {
+  color: #f39c12; /* Couleur dorée au survol */
+  transform: translateX(5px); /* Décalage vers la droite */
+}
+
+/* Style du numéro de la page */
+.page-footer .page-number {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}

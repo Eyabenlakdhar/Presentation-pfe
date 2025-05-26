@@ -1,0 +1,96 @@
+<body>
+ 
+  
+  <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+  <div #sidebar id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+    <ul>
+      <br><br>
+      <li><a  routerLink="/candidat">Introduction</a></li>
+      <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+      <li><a routerLink="/candidature">Problèmatique</a></li>
+      <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+      <li><a routerLink="/objectif">Objectives</a></li>
+      <li><a routerLink="/creationMission">Solution proposée</a></li>
+      <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+      <li><a routerLink="/cv">Architecture</a></li>
+      <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+      <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+      <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+      <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+      <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+    </ul>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="introduction-card" (click)="animateElements()">
+        <h1>Analyse et Spécification des besoins</h1>
+        <div class="circle">
+          <span>10</span>
+        </div>
+      </div>  </div>
+  <div class="row">
+      <div class="left-title">
+        <h2>1 : L'analyse des besoins</h2>
+      </div>
+
+
+      <div class="cards-container">
+        <!-- Carte de gauche -->
+        <div class="card left-card">
+          <h3>  🛠️ Besoins Fonctionnels</h3>
+          <ul> <br> 
+            <li>Gestion d'authentification </li>
+            <li>Gestion des utilisateurs </li>
+            <li>Dépôt et gestion des CVs </li>
+            <li>Gestion des candidatures</li>
+            <li>Publication et gestion des offres de mission</li>
+            <li>  Affectation des candidats</li>
+            <li>Gestion des entretiens</li>
+            <li>Gestion des réclamations</li>
+            <br> <br>
+           
+            
+   </ul>
+        </div>
+      
+        <!-- Carte de droite -->
+        <div class="card right-card">
+          <h3> ⚙️Besoins Non Fonctionnels</h3>
+          <ul> <br>
+            <li>Performance  🚀 </li>
+            <li>Sécurité  🔒</li>
+        
+            <li>Fiabilité ✅ </li>
+            <li>Extensibilité 🔗</li>
+            <li>Scalabilité 📈 </li>
+            <li>Compatibilité  🔄 </li>
+            <li>Accessibilité ♿ </li>
+            <li>Maintenabilité 🛠️ </li>
+            
+          </ul>
+        </div>
+      </div>
+    
+
+      
+    </div>
+
+
+
+
+
+
+
+   
+    <footer class="page-footer">
+      <a href="page1.html" class="arrow-left" routerLink="/cv"><i class="fas fa-arrow-left"></i> </a>
+      <span class="page-number">Page 13</span>
+      <a href="page3.html" class="arrow-right" routerLink="/cvarchivesadmin"> <i class="fas fa-arrow-right"></i></a>
+    </footer>
+    </div>
+ 
+</body>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">

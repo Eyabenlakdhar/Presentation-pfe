@@ -1,0 +1,96 @@
+<body>
+    <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+    <div #sidebar id="sidebar" class="sidebar">
+      <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+      <ul>
+        <li><a  routerLink="/candidat">Introduction</a></li>
+        <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+        <li><a routerLink="/candidature">Problèmatique</a></li>
+        <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+        <li><a routerLink="/objectif">Objectives</a></li>
+        <li><a routerLink="/creationMission">Solution proposée</a></li>
+        <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+        <li><a routerLink="/cv">Architecture</a></li>
+        <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+        <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+        <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+        <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+        <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+      </ul>
+    </div>
+<div class="title-container">
+    <h1 class="company-title">"Digital Power Consulting"</h1> 
+  </div>  <br> <br> 
+<div class="header-container">
+    <div class="introduction-card">
+      <h1>Présentation de l'entreprise</h1>
+      <div class="circle">
+        <span>02</span>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+    <a href="page1.html" class="arrow-left" routerLink="/candidat"><i class="fas fa-arrow-left"></i> </a>
+    <span class="page-number">Page 4</span>
+    <a href="page3.html" class="arrow-right" routerLink="/candidature"> <i class="fas fa-arrow-right"></i></a>
+  </footer>
+  <!-- Conteneur de l'image pleine page -->
+<div *ngIf="showImage" class="full-image-container" (click)="onImageClick()">
+    <img src="/assets/dpcimages.png" alt="Entreprise" class="full-image" />
+  </div>
+
+ <br> <br> <br> <br> <br> <br>
+  <!-- Texte long qui s'affiche après le clic -->
+  <div *ngIf="!showImage" class="text-content fade-in">
+    <div class="card-container">
+      <div class="card-title">
+        <h3>Statut juridique</h3>
+      </div>
+      <div class="card-paragraph">
+        <p>Entreprise à responsabilité limitée (SARL)</p>
+      </div>
+    </div>
+    
+    <div class="card-container">
+      <div class="card-title">
+        <h3>Activité principale</h3>
+      </div>
+      <div class="card-paragraph">
+        <p>Spécialisée dans l'exportation</p>
+      </div>
+    </div>
+    
+    <div class="card-container">
+      <div class="card-title">
+        <h3>Domaines d'expertise</h3>
+      </div>
+      <div class="card-paragraph">
+        <p>Intégration et conseil en nouvelles technologies</p>
+      </div>
+    </div>
+    
+    <div class="card-container">
+      <div class="card-title">
+        <h3>Positionnement</h3>
+      </div>
+      <div class="card-paragraph">
+        <p>Partenaire de choix pour la réalisation de projets numériques</p>
+      </div>
+    </div>
+    
+    <div class="card-container">
+      <div class="card-title">
+        <h3>Valeur ajoutée</h3>
+      </div>
+      <div class="card-paragraph">
+        <p>Conception d'applications sur mesure grâce à une expertise reconnue dans le domaine du numérique</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</body>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">

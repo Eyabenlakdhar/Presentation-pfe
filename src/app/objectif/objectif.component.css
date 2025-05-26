@@ -1,0 +1,391 @@
+body {
+    background: linear-gradient(45deg, #d3c19c, #ebe1d1, #efeae2, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite; /* Animation du dégradé */
+    font-family: Arial, sans-serif;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Amélioration du conteneur des cercles */
+  .circle-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 70px;
+    padding-left: 60px;
+    position: relative;
+  }
+  
+  .circle-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 55%;
+    z-index: 1;
+  }
+  
+  /* Amélioration des étapes avec cercles */
+  .circle-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 35px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .circle-step:hover {
+    transform: translateX(10px);
+  }
+  
+  /* Ligne de connexion entre les cercles */
+  .circle-step::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    width: 2px;
+    height: 35px;
+    background: linear-gradient(to bottom, #a87e3b, transparent);
+    display: block;
+  }
+  
+  .circle-step:last-child::after {
+    display: none;
+  }
+  
+  /* Amélioration des cercles */
+  .circle-step .circle {
+    background: linear-gradient(145deg, #b88c40, #8d6a2f);
+    font-size: 22px;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .circle-step .circle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  
+  .circle-step .circle:hover {
+    background: linear-gradient(145deg, #75b614, #548a0a);
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Amélioration du texte */
+  .text {
+    font-size: 16px;
+    text-align: left;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    max-width: 700px;
+    line-height: 1.5;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid #a87e3b;
+    margin-left: 15px;
+  }
+  
+  .circle-step:hover .text {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-left: 4px solid #64a50e;
+  }
+  
+  /* Amélioration de l'image à droite */
+  .right-image {
+    position: absolute;
+    top: 15%; /* Centrer verticalement par rapport au conteneur parent */
+    right: 5%; /* Distance depuis le bord droit */
+    transform: translateY(-50%); /* Ajustement précis du centrage vertical */
+    transition: all 0.5s ease;
+    z-index: 0;
+    margin-top: -70px; /* Ajustement pour remonter l'image */
+  }
+  
+  .right-image img {
+    max-width: 850px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Animation lors du chargement de la page */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .circle-step:nth-child(1) {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .circle-step:nth-child(2) {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .circle-step:nth-child(3) {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.6s;
+  }
+  
+  .circle-step:nth-child(4) {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.8s;
+  }
+  
+  .right-image {
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1s;
+  }
+  
+  /* Responsive design amélioré */
+  @media (max-width: 1200px) {
+    .right-image {
+      right: 2%;
+    }
+    
+    .right-image img {
+      max-width: 380px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .circle-column {
+      width: 65%;
+    }
+    
+    .right-image img {
+      max-width: 320px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .circle-container {
+      flex-direction: column;
+      align-items: center;
+      padding-left: 20px;
+    }
+    
+    .circle-column {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    
+    .right-image {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .right-image img {
+      max-width: 80%;
+    }
+    
+    .text {
+      font-size: 16px;
+    }
+  }
+  
+  /* Style du bouton */
+  #openSidebar {
+    position: fixed;
+    bottom: 20px; /* Distance depuis le bas */
+    left: 20px;   /* Distance depuis la gauche */
+    background: #775b18;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    z-index: 2; /* Assure que le bouton reste visible */
+  }
+  
+  #openSidebar:hover {
+    background: #34495e;
+  }
+  
+  /* Style du sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #775b18;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 3; /* Assure que le sidebar reste au-dessus de tout */
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #b4bc1a;
+  }
+  
+  /* Introduction card */
+  .introduction-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    color: #333; /* Couleur du texte */
+    border-radius: 40px; /* Coins arrondis */
+    padding: 20px 30px; /* Espacement interne */
+    position: relative;
+    max-width: 600px; /* Limite la largeur */
+    margin: 20px auto; /* Centre horizontalement */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+  }
+  
+  .introduction-card h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem; /* Taille du titre */
+    margin: 0;
+    color: #996916;
+  }
+  /* Style global pour le footer */
+.page-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espace entre les éléments */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Lien de la flèche gauche */
+  .page-footer .arrow-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-left:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(-5px); /* Décalage vers la gauche */
+  }
+  
+  /* Lien de la flèche droite */
+  .page-footer .arrow-right {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre le texte et l'icône */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-right:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(5px); /* Décalage vers la droite */
+  }
+  
+  /* Style du numéro de la page */
+  .page-footer .page-number {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }

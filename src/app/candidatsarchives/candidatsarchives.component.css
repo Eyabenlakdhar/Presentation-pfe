@@ -1,0 +1,307 @@
+/* Corps de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #dbbf95, #e6e2dd); /* Fond dégradé */
+  color: #ffffff; /* Texte sombre pour le contraste */
+    overflow: hidden; /* Empêche le défilement initial */
+  }
+  
+  /* Conteneur pour l'image pleine page */
+  .full-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: black; /* Optionnel, ajoute une couleur d'arrière-plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Indique que c'est cliquable */
+  }
+  
+  .full-image {
+    width: 100%; /* L'image couvre toute la largeur */
+    height: 100%; /* L'image couvre toute la hauteur */
+    object-fit: cover; /* Maintient les proportions tout en couvrant */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .full-image-container:hover .full-image {
+    transform: scale(1.05); /* Zoom léger au survol */
+    opacity: 0.9;
+  }
+  
+
+/* Conteneur des cartes */
+/* Conteneur des cartes */
+.card-container {
+  display: flex;
+  gap: 20px; /* Espacement entre le titre et le paragraphe */
+  margin: 20px auto; /* Centrer le conteneur */
+  width: 80%; /* Limiter la largeur des cartes à 80% du conteneur parent (Titre) */
+  flex-wrap: wrap; /* Permet aux cartes de se déplacer si l'espace est insuffisant */
+  justify-content: space-between;
+}
+
+/* Carte pour le titre */
+.card-title {
+  width: 25%; /* Largeur de la carte du titre */
+  height: 60px; /* Hauteur de la carte */
+  background-color: #c19b21; /* Couleur de fond violette */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.card-title h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Carte pour le paragraphe */
+.card-paragraph {
+  width: 70%; /* Largeur de la carte du paragraphe */
+  padding: 15px;
+  background-color: transparent; /* Fond transparent */
+  border: 2px solid #b1812e; /* Bordure violette */
+  border-radius: 10px;
+  color: #000000; /* Texte violet */
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Effet au survol des cartes */
+.card-title:hover,
+.card-paragraph:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre marquée au survol */
+  transform: translateY(-5px); /* Légère remontée des cartes */
+}
+
+
+
+
+
+
+
+
+
+
+  /* Conteneur pour la carte d'introduction */
+.header-container {
+    position: absolute;
+    top: 20px; /* Espace depuis le haut */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajustement pour centrer */
+    z-index: 101; /* Assure que l'élément est au-dessus de l'image */
+  }
+  
+  /* Carte d'introduction */
+  /*introduction card */
+.introduction-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    color: #471616; /* Couleur du texte */
+    border-radius: 40px; /* Coins arrondis */
+    padding: 20px 30px; /* Espacement interne */
+    position: relative;
+    max-width: 600px; /* Limite la largeur */
+    margin: 20px auto; /* Centre horizontalement */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+  }
+  
+  .introduction-card h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem; /* Taille du titre */
+    margin: 0;
+    color: #996916;
+  }
+  
+  .circle {
+    background: #996916; /* Couleur du cercle */
+    color: white; /* Couleur du texte dans le cercle */
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Cercle parfait */
+    margin-left: 20px; /* Espacement entre le texte et le cercle */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre sur le cercle */
+  }
+
+  /* Conteneur pour le titre de l'entreprise */
+.title-container {
+    position: absolute;
+    top: 140px; /* Positionne tout en haut */
+    width: 100%; /* Prend toute la largeur */
+    text-align: center; /* Centre le texte horizontalement */
+    z-index: 102; /* Au-dessus de l'introduction */
+    padding: 20px 0; /* Espacement interne */
+  }
+  
+  /* Titre de l'entreprise */
+  .company-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem; /* Taille du titre */
+    font-weight: bold;
+    color: #b19f2e; /* Couleur dorée élégante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Ombre portée */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    text-transform: uppercase; /* Met tout en majuscules */
+    margin: 0; /* Supprime les marges */
+    animation: fadeInDown 1s ease-out; /* Animation d'apparition */
+  }
+  
+  /* Animation d'apparition */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /* Part légèrement au-dessus */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Arrive à sa position finale */
+    }
+  }
+ /* Style global pour le footer */
+.page-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espace entre les éléments */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 101;
+  
+  }
+  
+  /* Lien de la flèche gauche */
+  .page-footer .arrow-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-left:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(-5px); /* Décalage vers la gauche */
+  }
+  
+  /* Lien de la flèche droite */
+  .page-footer .arrow-right {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 8px; /* Espace entre le texte et l'icône */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .page-footer .arrow-right:hover {
+    color: #f39c12; /* Couleur dorée au survol */
+    transform: translateX(5px); /* Décalage vers la droite */
+  }
+  
+  /* Style du numéro de la page */
+  .page-footer .page-number {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Bouton pour ouvrir la sidebar */
+#openSidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    z-index: 104;
+  }
+  
+  #openSidebar:hover {
+    background: #34495e;
+  }
+  
+  /* Sidebar (menu latéral) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #94691f;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 104;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #1abc9c;
+  }
+  

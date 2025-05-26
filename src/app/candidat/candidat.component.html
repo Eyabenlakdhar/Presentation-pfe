@@ -1,0 +1,68 @@
+<body >
+ 
+  
+  <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+
+  <div #sidebar id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+    <ul>
+      <br><br>
+      <li><a  routerLink="/candidat">Introduction</a></li>
+      <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+      <li><a routerLink="/candidature">Problèmatique</a></li>
+      <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+      <li><a routerLink="/objectif">Objectives</a></li>
+      <li><a routerLink="/creationMission">Solution proposée</a></li>
+      <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+      <li><a routerLink="/cv">Architecture</a></li>
+      <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+      <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+      <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+      <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+      <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+    </ul>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      
+
+
+      <div class="introduction-card" (click)="togglePopup()">
+        <h1>Introduction</h1>
+        <div class="circle">
+          <span>01</span>
+        </div>
+      </div>
+    
+      <!-- Popup pour l'introduction -->
+      <div #popup id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close-btn" (click)="togglePopup()">×</span>
+          <h2>Introduction</h2>
+          <p>📍Selon une étude réalisée par le cabinet Robert Walters, 57 % des candidats déclineraient une offre si le processus de recrutement est trop long. <br> <br>
+            📍D'après une enquête de CareerBuilder, 68 % des candidats déclarent qu’une mauvaise expérience de recrutement influence leur perception de l'entreprise et 58 % des candidats sont moins enclins à postuler à une offre si le processus est jugé trop complexe. <br> <br>
+           
+        </div>
+      </div>
+    
+     
+
+      <div class="left-image">
+        <img src="/assets/prsonnel12.gif" alt="Description de l'image">
+      </div>
+
+   
+     
+  </div>
+    
+    
+      <footer class="page-footer">
+        <a href="page1.html" class="arrow-left" routerLink="/affectation"><i class="fas fa-arrow-left"></i> </a>
+        <span class="page-number">Page 3</span>
+        <a href="page3.html" class="arrow-right" routerLink="/candidatsarchives"> <i class="fas fa-arrow-right"></i></a>
+      </footer>
+    </div>
+ 
+</body>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">

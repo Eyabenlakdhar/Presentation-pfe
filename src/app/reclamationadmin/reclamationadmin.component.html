@@ -1,0 +1,172 @@
+<body >
+ 
+  
+      <button id="openSidebar" (click)="toggleSidebar('open')">☰ Plan</button>
+  
+      <div #sidebar id="sidebar" class="sidebar">
+        <button id="closeSidebar" class="close-btn" (click)="toggleSidebar('close')">X</button>
+        <ul>
+          <br><br>
+          <li><a  routerLink="/candidat">Introduction</a></li>
+          <li><a routerLink="/candidatsarchives">Présentation de l'entreprise</a></li>
+          <li><a routerLink="/candidature">Problèmatique</a></li>
+          <li><a routerLink="/competencecandidat">Etude de l'existant</a></li>
+          <li><a routerLink="/objectif">Objectives</a></li>
+          <li><a routerLink="/creationMission">Solution proposée</a></li>
+          <li><a routerLink="/dashboard_ing_archives">Méthodologie adapté</a></li>
+          <li><a routerLink="/cv">Architecture</a></li>
+          <li><a routerLink="/cvadmin">Analyse et spécification des besoins</a></li>
+          <li><a routerLink="/dashboard_ing">Environnement du travail</a></li>
+          <li><a routerLink="/reclamationadmin">Partie Devops</a></li>
+          <li><a routerLink="/reclamationarchivesadmin">Réalisation</a></li>
+          <li><a routerLink="/welcomepageingenieur">Conclusion</a></li>
+        </ul>
+      </div>
+    
+      <div class="container-fluid">
+        <div class="row">
+        
+  
+  
+          <div class="introduction-card" (click)="togglePopup()">
+            <h1>Partie DevOps</h1>
+            <div class="circle">
+              <span>12</span>
+            </div>
+          </div>
+      
+          <div class="container-content">
+            <div class="image-section zoom-effect">
+              <img src="/assets/archidevops.png" alt="DevOps Workflow" />
+            </div>
+            <div class="text-section">
+              <h1>Intégration Continue</h1>
+            
+              <div class="badge-container">
+                <span class="badge-feature">CI/CD</span>
+                <span class="badge-feature">Automatisation</span>
+                <span class="badge-feature">Jenkins</span>
+              </div>
+            
+              <p>
+                <i class="icon-pulse fas fa-sync-alt"></i>
+                L'intégration continue permet d'automatiser les tests et le déploiement, assurant une livraison rapide et fiable des nouvelles fonctionnalités. Notre pipeline CI/CD détecte automatiquement les problèmes potentiels avant qu'ils n'atteignent la production.
+              </p>
+            
+              <ul class="feature-list">
+                <li>Détection précoce des bugs et problèmes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="custom-divider"></div>
+  
+          <div class="container-content reverse">
+            <div class="text-section">
+              <h1>Outils et technologies utilisés :</h1>
+              <p>
+                  <img src="/assets/gitlab.png" alt="icones" style="width: 50px; height: auto; margin-right: 45px; vertical-align: middle;" />   <b style="width: 50px; color: #b18434;">GitLab  :</b> Pour le contrôle de version et la gestion collaborative. <br> <br>
+                  <img src="/assets/jenkins.png" alt="icones" style="width: 80px; height: auto; margin-right: 15px; vertical-align: middle;" />  <b style="width: 50px; color: #b18434;">Jenkins, GitLab CI/CD :</b> Automatisation des pipelines CI/CD. <br><br>
+                  <img src="/assets/maven.png" alt="icones" style="width: 70px; height: auto; margin-right: 25px; vertical-align: middle;" />  <b style="width: 50px; color: #b18434;">Maven  : </b>Gestionnaire de projet pour compiler, tester, et packager les applications Java.<br><br>
+                  <img src="/assets/sonar.png" alt="icones" style="width: 70px; height: auto; margin-right: 25px; vertical-align: middle;" />  <b style="width: 50px; color: #b18434;">SonarQube   : </b>Analyse de la qualité du code. <br><br>
+                  <img src="/assets/docker.png" alt="icones" style="width: 60px; height: auto; margin-right: 30px; vertical-align: middle;" />  <b style="width: 50px; color: #b18434;">Docker  : </b>Containerisation pour assurer la portabilité des applications. <br><br>
+                  <img src="/assets/kubernettesicone.png" alt="icones" style="width: 60px; height: auto; margin-right: 30px; vertical-align: middle;" /> <b style="width: 50px; color: #b18434;"> Kubernetes  :</b> Orchestration des conteneurs pour une gestion optimale des ressources. <br><br>
+                  <img src="/assets/argoicone.png" alt="icones" style="width: 60px; height: auto; margin-right: 18px; vertical-align: middle;" />  <b style="width: 50px; color: #b18434;"> Argo CD  : </b>Outil GitOps pour automatiser et synchroniser les déploiements Kubernetes à partir des configurations stockées dans un dépôt Git. <br>
+             
+              
+              </p>
+            </div>
+         
+          </div>
+  
+  
+  
+     
+       
+        
+          <div class="custom-divider"></div>
+          <div class="container-content">
+            <div class="image-section">
+              <img src="/assets/jenkinsback.png" alt="Image illustrative" />  <br> <br>
+              <img src="/assets/jenkinsfront.png" alt="Image illustrative" /> <br><br>
+              <img src="/assets/kubernettes.png" alt="Image illustrative" />  <br><br>
+              <img src="/assets/kubernettes1.png" alt="Image illustrative" />  <br><br>
+              <img src="/assets/argo.png" alt="Image illustrative" /> 
+            </div>
+            <div class="text-section">
+              <h1>Pipeline CI/CD (Intégration et Déploiement Continus) :</h1>
+              <table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; width: 100%; text-align: left;">
+                  <thead>
+                      <tr style="border: 1px solid black;">
+                          <th style="border: 1px solid black;">Étape</th>
+                          <th style="border: 1px solid black;">Pipeline Backend</th>
+                          <th style="border: 1px solid black;">Pipeline Frontend</th>
+                          <th style="border: 1px solid black;">Différence</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Checkout</td>
+                          <td style="border: 1px solid black;">Récupère le code depuis Git (backend microservices)</td>
+                          <td style="border: 1px solid black;">Récupère le code depuis Git (frontend unique)</td>
+                          <td style="border: 1px solid black;">Les deux pipelines utilisent Git, mais les dépôts et branches diffèrent</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Build</td>
+                          <td style="border: 1px solid black;">Compile le code avec Maven pour générer des artefacts</td>
+                          <td style="border: 1px solid black;">Utilise Node.js pour gérer les dépendances et packager le frontend</td>
+                          <td style="border: 1px solid black;">Backend : Java/Maven ; Frontend : Node.js</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Run Test</td>
+                          <td style="border: 1px solid black;">Exécute des tests unitaires avec Maven</td>
+                          <td style="border: 1px solid black;">Aucune étape de test n’est définie</td>
+                          <td style="border: 1px solid black;">Le backend inclut des tests, pas le frontend</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Code Quality Check</td>
+                          <td style="border: 1px solid black;">Analyse le code avec SonarQube</td>
+                          <td style="border: 1px solid black;">Aucun outil de qualité de code défini</td>
+                          <td style="border: 1px solid black;">Backend : Intègre SonarQube ; Frontend : Aucun contrôle qualité</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Build Docker Images</td>
+                          <td style="border: 1px solid black;">Crée plusieurs images Docker (une par microservice)</td>
+                          <td style="border: 1px solid black;">Crée une seule image Docker (frontend)</td>
+                          <td style="border: 1px solid black;">Backend : Gestion de plusieurs images ; Frontend : Une seule image</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Push Docker Images</td>
+                          <td style="border: 1px solid black;">Pousse toutes les images Docker dans un registre privé</td>
+                          <td style="border: 1px solid black;">Pousse une seule image Docker dans un registre privé</td>
+                          <td style="border: 1px solid black;">Backend : Plusieurs images ; Frontend : Une seule image</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Update Deployment YAML</td>
+                          <td style="border: 1px solid black;">Met à jour les fichiers YAML pour chaque microservice</td>
+                          <td style="border: 1px solid black;">Met à jour un seul fichier YAML pour le frontend</td>
+                          <td style="border: 1px solid black;">Backend : Plusieurs fichiers YAML ; Frontend : Un seul fichier YAML</td>
+                      </tr>
+                      <tr style="border: 1px solid black;">
+                          <td style="border: 1px solid black;">📍 Déploiement</td>
+                          <td style="border: 1px solid black;">Déploie sur Kubernetes via ArgoCD (GitOps automatisé)</td>
+                          <td style="border: 1px solid black;">Déploie sur Kubernetes via kubectl</td>
+                          <td style="border: 1px solid black;">Backend : Déploiement automatisé avec ArgoCD ; Frontend : Déploiement manuel avec kubectl</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        
+          </div>
+       
+  
+        </div>
+          <footer class="page-footer">
+            <a href="page1.html" class="arrow-left" routerLink="/dashboard_ing"><i class="fas fa-arrow-left"></i> </a>
+            <span class="page-number">Page 16</span>
+            <a href="page3.html" class="arrow-right" routerLink="/reclamationarchivesadmin"> <i class="fas fa-arrow-right"></i></a>
+          </footer>
+        </div>
+   
+    </body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
